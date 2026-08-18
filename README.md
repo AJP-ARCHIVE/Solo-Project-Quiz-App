@@ -63,4 +63,5 @@ See the [License](./License) file for details.
 
  - [Open Trivia Database API](https://opentdb.com/api_config.php)
  - [html-entities Package](https://www.npmjs.com/package/html-entities#user-content-decodetext-options)
+ - [Figma Design File for Quiz App - Scrimba](https://www.figma.com/file/E9S5iPcm10f0RIHK8mCqKL/Quizzical-App?node-id=0%3A1)
  
