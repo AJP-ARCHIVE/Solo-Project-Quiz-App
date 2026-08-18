@@ -55,7 +55,7 @@ npm run dev
 ## License
 
 This project is licensed under the MIT License.  
-See the [License](./License) file for details.
+See the [License](./LICENSE) file for details.
 
 
 
