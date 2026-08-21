@@ -190,7 +190,7 @@ export default function StartQuiz() {
     
     if (loading) {
       return (
-        <section className="loading-error-section"><h2>{triviaError}</h2></section>
+        <section className="loading-error-section"><h2>Loading...</h2></section>
       )
     }
 
