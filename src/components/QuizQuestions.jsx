@@ -3,22 +3,18 @@ import React from "react"
 import {decode} from 'html-entities';
 
 
-export default function QuizQuestions( { questionBank, isGameOver, setIsGameOver, isNewGame, setIsNewGame, handleSubmit, handleNewGame }) {
-  console.log(isGameOver)
+export default function QuizQuestions( { questionBank, isGameOver, handleSubmit, handleNewGame }) {
 
-   //console.log("questions", questionBank)
+
+
    const radioInputs = document.querySelectorAll('input[type="radio"]:checked')
    const checkedRadioInputs = Array.from(radioInputs)
-   //const checkAnswersBtn = document.getElementById("check-answers-btn") 
-   //checkAnswersBtn?.addEventListener("click", checkAnswers)
+   
    
    // Extract questions and answers from questionBank to compose new list of objects with the correct answer randomly inserted
    const [questionSet, setQuestionSet] = React.useState([])
    
    // Create an object with key and value pairs to record the corresponding question's selected answer 
-   // Allows for the option to create a dynamic number of questions
-   //const questionAnswerObj = Array.from({length: 5}, (_, i) => [`question-${i + 1}`, null])
-   //console.log(questionAnswerObj)
    function createQuestionAnswerObj() {
      const object = {}
      for (let i=0; i < 5; i++) {
@@ -69,9 +65,7 @@ export default function QuizQuestions( { questionBank, isGameOver, setIsGameOver
             const decodedIncorrectAnswers = question.incorrect_answers.map(answer => decode(answer, {level: 'html5'}))
             // Use array of decoded incorrect answers to randomly insert the decoded correct answer
             const decodedAnswers = decodedIncorrectAnswers.map(answer => decode(answer, {level: 'html5'}))
-            //const allAnswers = [...question.incorrect_answers.map(answer => decode(answer))]
-            //const allAnswers = question.incorrect_answers.map(decode)
-            //console.log(allAnswers)
+
             // Get random index
             // 4 Possible answer choices "indexes" 
             const randomIndex = Math.floor(Math.random() * (decodedAnswers.length + 1))
@@ -100,9 +94,7 @@ React.useEffect(() => {
     // Compare selected answer with questionSet to compare selected answer against correct_answer in questionSet
     if (checkedRadioInputs.length === 5) {
     const quizOutput = Object.entries(selectedAnswers) 
-    // console.log('quizoutout', quizOutput)
-    // console.log("test", quizOutput[0][1])
-    // console.log("test2", quizOutput[1][1])
+
     
     for (const [index, [question, answer]] of quizOutput.entries()) {
         // console.log("index", index)
@@ -142,16 +134,6 @@ React.useEffect(() => {
    function handleSelection(e) {
         //console.log("Changed:", e.target.name, e.target.value);
         setSelectedAnswers(prev => ({...prev, [e.target.name]: e.target.value}))
-
-    
-        // Check if all questions were answered 
-        // Log whether selected answers are correct or not if all questions were answered
-        // if (checkedRadioInputs.length === 5) {
-        //     console.log("all questions answered")
-        //      // Log selected answers by updating questionSet
-             
-        // }
-
 
    }
 
