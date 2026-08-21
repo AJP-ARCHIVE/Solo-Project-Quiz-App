@@ -81,17 +81,13 @@ export default function StartQuiz() {
         //  }
         // If it is new game set fetched game status to false "game reset"
         if (isNewGame) {
-           setIsQuestionsFetched(prev => !prev) // false
+           setIsQuestionsFetched(false) // false
         }
         
         return 
         
      }, [isGameOver])
 
-      // React.useEffect(() => {
-      //   console.log("game status", isGameOver)
-       
-      // }, [isGameOver])
 
 
     
@@ -101,12 +97,7 @@ export default function StartQuiz() {
           try {
               //console.log(quizOptions)
               if (!quizOptions?.category && !quizOptions?.difficulty) return
-              //questionFetchStatus.current = true 
               
-              // Reset game over status to false if previous game over status is true in order to start new game
-              //setIsGameOver(prevGameStatus => prevGameStatus ? !prevGameStatus : prevGameStatus)
-         
-              //setShowQuestions(prevShowQuestions => isGameOver && prevShowQuestions ? !prevShowQuestions : prevShowQuestions)
               
               // Compose fetch url based on whether a non default value was selected for category and difficulty level
               const category = quizOptions.category !== "0" ? `&category=${quizOptions.category}` : ""
@@ -138,25 +129,13 @@ export default function StartQuiz() {
         getQuestions()
       }, [quizOptions])
 
-      // async function getOptions(previousState, formData) {
-
-      //   const category = formData.get("category")
-      //   //console.log(category)
-      //   const difficulty = formData.get("difficulty")
-      //   return {category, difficulty}
-      // }
+      
     
     // Function for starting game 
     function handleStartGame() {
-        // if (isQuestionsFetched) {
-        //   setShowQuestions(prev => !prev)
-        // } 
-        // show game questions -> redirect to QuizQuestions Page
-        //setShowStart(prev => !prev) // false
-       //setShowQuestions(prev => !prev) // true 
-      // setIsNewGame(true)
+       
       setIsNewGame(false) // Set new game to false 
-      //console.log("start")
+   
       window.scrollTo({
       top: 0,
       behavior: 'auto' 
@@ -169,8 +148,7 @@ export default function StartQuiz() {
         setIsGameOver(!isGameOver) // false
         
         setIsNewGame(!isNewGame) // true 
-        //setShowOptions(true)
-        //setShowQuestions(false)
+ 
         window.scrollTo({
         top: 0,
         behavior: 'auto' 
@@ -205,14 +183,13 @@ export default function StartQuiz() {
     
       
          <section className="main-section">
-               {/* Show main quiz page only when questions have not been fetched  */}
-               <article className="title-description">
+                           {/* Show main quiz page only when questions have not been fetched  */}
+               {!isQuestionsFetched && <article className="title-description">
                     <h1 className="title">Quizzical</h1>
                     <p className="description">Let's put your brain to the challenge!</p>
-                </article> 
-              
-                  {/* Show options when questions have not been fetched */}
-         {quizCategories && <QuizOptions quizCategories={quizCategories} quizDifficultyLevel={quizDifficultyLevel} formAction={formAction} handleStartGame={handleStartGame} isQuestionsFetched={isQuestionsFetched} /> }
+                </article> }
+            {/* Show options when questions have not been fetched */}
+         {!isQuestionsFetched && quizCategories && <QuizOptions quizCategories={quizCategories} quizDifficultyLevel={quizDifficultyLevel} formAction={formAction} handleStartGame={handleStartGame} isQuestionsFetched={isQuestionsFetched} /> }
                { isQuestionsFetched && <QuizQuestions questionBank={questionBank} isGameOver={isGameOver} setIsGameOver={setIsGameOver} isNewGame = {isNewGame} setIsNewGame={setIsNewGame}  handleSubmit={handleSubmit}  handleNewGame={handleNewGame} /> }
             
 
