@@ -1,8 +1,8 @@
 "use client"
 import React from "react"
-import { getOptions } from "../actions"
-import QuizOptions from "./QuizOptions"
-import QuizQuestions from "./QuizQuestions"
+import { getOptions } from "../actions.jsx"
+import QuizOptions from "./QuizOptions.jsx"
+import QuizQuestions from "./QuizQuestions.jsx"
 
 
 export default function StartQuiz() {
@@ -205,7 +205,11 @@ export default function StartQuiz() {
     
       
          <section className="main-section">
-    
+               {/* Show main quiz page only when questions have not been fetched  */}
+               {!isQuestionsFetched && <article className="title-description">
+                    <h1 className="title">Quizzical</h1>
+                    <p className="description">Let's put your brain to the challenge!</p>
+                </article> }
               
                   {/* Show options when questions have not been fetched */}
          {!isQuestionsFetched && quizCategories && <QuizOptions quizCategories={quizCategories} quizDifficultyLevel={quizDifficultyLevel} formAction={formAction} handleStartGame={handleStartGame} isQuestionsFetched={isQuestionsFetched} /> }
