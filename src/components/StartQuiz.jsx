@@ -72,16 +72,10 @@ export default function StartQuiz() {
 
       // Show options and questions when game is reset
       React.useEffect(() => {
-         //setShowOptions(prev => !prev)
-         //questionFetchStatus.current = false
-         // if fetched questions exist -> display questions 
-        //  if(questionBank) {
-        //   //setShowQuestions(prev => !prev)
-        //   setIsQuestionsFetched(prev => !prev) // false 
-        //  }
+
         // If it is new game set fetched game status to false "game reset"
         if (isNewGame) {
-           setIsQuestionsFetched(false) // false
+           setIsQuestionsFetched(false) // set to false to indicate that no questions have been fetched 'new game'
         }
         
         return 
