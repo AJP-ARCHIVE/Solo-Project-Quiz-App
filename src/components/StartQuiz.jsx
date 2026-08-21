@@ -205,7 +205,12 @@ export default function StartQuiz() {
     
       
          <section className="main-section">
-          <h1>Test</h1>
+               {/* Show main quiz page only when questions have not been fetched  */}
+               {!isQuestionsFetched && <article className="title-description">
+                    <h1 className="title">Quizzical</h1>
+                    <p className="description">Let's put your brain to the challenge!</p>
+                </article> }
+         
             
 
          </section> 
