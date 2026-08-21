@@ -1,6 +1,9 @@
 # Solo Project Quiz App
 A solo React project from Scrimba’s React.js Fundamentals course, built entirely from scratch. The Quizzical app is a fully interactive trivia quiz that loads five questions from the Open Trivia Database (OTDB) API, tracks user selections, and displays correct and incorrect answers at the end of the game.  The UI and functionality were implemented to match the provided Figma design file and all core project requirements. In addition to the required features, the app includes optional quiz customization, allowing users to select both the category and difficulty level before starting the game.  The project uses conditional rendering to switch between the start screen and the quiz screen. This is handled through React state management and useActionState for quiz form submission.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f6f1c463-749e-46fc-b4c0-91954535c4e2/deploy-status)](https://app.netlify.com/projects/quizzicalsoloproject/deploys)
+### Live Demo: [Quizzical](https://quizzicalsoloproject.netlify.app/)
+
 ## Tech Stack
 - React
 - Vite (with HMR)
