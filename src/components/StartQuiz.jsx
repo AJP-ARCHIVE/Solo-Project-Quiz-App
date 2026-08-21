@@ -26,12 +26,7 @@ export default function StartQuiz() {
       // Keep track of whether questions were fetched from API to prevent duplicate requests
       const [isQuestionsFetched, setIsQuestionsFetched] = React.useState(false)
       const [isNewGame, setIsNewGame] = React.useState(true)
-      // Option display state
-      //const [showOptions, setShowOptions] = React.useState(true)
-      // Questions display state
-      //const [showQuestions, setShowQuestions] = React.useState(false)
-      
-      //const questionFetchStatus = React.useRef(false)
+
 
 
 
