@@ -38,17 +38,17 @@ npm run dev
 
 
 ### Start Page
-![App Screenshot](./assets/screenshots/QuizzicalStartPage.PNG)
+![App Screenshot](./src/assets/screenshots/QuizzicalStartPage.PNG)
 
 
 ### Questions Page
-![App Screenshot](./assets/screenshots/QuizzicalQuestionPage.PNG)
+![App Screenshot](./src/assets/screenshots/QuizzicalQuestionPage.PNG)
 
 ### Score Tally 
-![App Screenshot](./assets/screenshots/QuizzicalQuestionTallyPage.PNG)
+![App Screenshot](./src/assets/screenshots/QuizzicalQuestionTallyPage.PNG)
 
 ### App Demo
-![App Screenshot](./assets/screenshots/QuizzicalDemo.gif)
+![App Screenshot](./src/assets/screenshots/QuizzicalDemo.gif)
 
 
 
