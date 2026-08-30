@@ -103,7 +103,6 @@ export default function StartQuiz() {
               }
               //console.log(data.results)
               setIsQuestionsFetched(true)
-       
               setQuestionBank(data.results)
              
           }
