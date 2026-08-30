@@ -1,5 +1,5 @@
 import React from "react"
-import QuizQuestions from "./QuizQuestions"
+
 export default function QuizOptions({ quizCategories, quizDifficultyLevel, formAction, handleStartGame, isQuestionsFetched }) {
 
     // Render Category Options
